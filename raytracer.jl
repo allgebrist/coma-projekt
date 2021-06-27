@@ -147,8 +147,6 @@ function is_visible(p::VecR3, m::VecR3, r::Real, frame = ImageFrame(-250, 250, -
 
 	end
 
-	println("hola")
-
 	return false
 
 end
