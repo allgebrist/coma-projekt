@@ -23,6 +23,9 @@ def take_snapshot(m, r, density, filename, y_axis_select = 0):
     print(image.format, image.size, image.mode)
 
     b, h = image.size
+    b, h = min(b, h), min(b, h)
+
+    image = image.resize((b, h))
 
     image_rgba = image.convert("RGBA")
     image_data = list(image_rgba.getdata())
