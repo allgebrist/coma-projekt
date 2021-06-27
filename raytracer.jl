@@ -25,10 +25,10 @@ end
 function equation_solvable(a::Real, b::Real, c::Real)::Bool
 	"""
 		Eingabe: Drei reelle Zahlen a, b, c, die den Koeffizienten
-				 eines Polynoms zweiten Grades ax^2 + bx + c ensprechen.
+			 eines Polynoms zweiten Grades ax^2 + bx + c ensprechen.
 
 		Ausgabe: Ein Boolescher Wert: 'false', falls die homogene Gleichung 
-				 ax^2 + bx + c = 0 keine reelle Lösung hat, andernfalls 'true'.
+			 ax^2 + bx + c = 0 keine reelle Lösung hat, andernfalls 'true'.
 	"""
 	return ((b^2 - (4 * a * c)) < 0 ? false : true)
 end
@@ -38,8 +38,8 @@ end
 function mapping(p::VecR3, frame = ImageFrame(-250, 250, -250, 250, 250), y_axis_select = false)::Any
 	"""
 		Eingabe: - p: 
-				 - frame: 
-				 - y_axis_select: 
+			 - frame: 
+			 - y_axis_select: 
 
 		Ausgabe: 
 	"""
@@ -84,10 +84,10 @@ end
 function is_visible(p::VecR3, m::VecR3, r::Real, frame = ImageFrame(-250, 250, -250, 250, 250), y_axis_select = false)::Bool
 	"""
 		Eingabe: - p: 
-				 - m: 		
-				 - r:	
-				 - frame:
-				 - y_axis_select: 
+			 - m: 		
+			 - r:	
+			 - frame:
+			 - y_axis_select: 
 
 		Ausgabe: 
 	"""
@@ -157,10 +157,10 @@ end
 
 function parametrization_sphere(theta::Real, phi::Real, m::VecR3, r::Real)::VecR3
 	"""
-		Eingabe: - theta: 	Ein Winkel, der im Intervall [0,π] liegen muss.
-				 - phi: 	Ein Winkel, der im Intervall [0,2π] liegen muss.
-				 - m: 		
-				 - r:	
+		Eingabe: - theta: Ein Winkel, der im Intervall [0,π] liegen muss.
+			 - phi:   Ein Winkel, der im Intervall [0,2π] liegen muss.
+			 - m: 		
+			 - r:	
 
 		Ausgabe: 	
 	""" 
@@ -175,12 +175,12 @@ end
 function samples(first_coordinate::Real, second_coordinate::Real, b::Int, h::Int, m::VecR3, r::Real, density::Int)::Any
 	"""
 		Eingabe: - first_coordinate:
-				 - second_coordinate:
-				 - b: 
-				 - h:
-				 - m:
-				 - r: 
-				 - density:
+			 - second_coordinate:
+			 - b: 
+			 - h:
+			 - m:
+			 - r: 
+			 - density:
 
 		Ausgabe: 
 	"""
@@ -203,13 +203,13 @@ end
 function snapshot_sphere(b::Int, h::Int, data::AbstractArray, m::VecR3, r::Real, density::Int, frame = ImageFrame(-250, 250, -250, 250, 250), y_axis_select = false)::AbstractArray
 	""" 
 		Eingabe: - b:
-				 - h:
-				 - data: 
-				 - m: 
-				 - r: 
-				 - density: 
-				 - frame: 
-				 - y_axis_select: 
+		 	 - h:
+			 - data: 
+			 - m: 
+			 - r: 
+			 - density: 
+			 - frame: 
+			 - y_axis_select: 
 
 		Ausgabe: 
 
