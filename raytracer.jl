@@ -166,8 +166,8 @@ function parametrization_sphere(theta::Real, phi::Real, m::VecR3, r::Real)::VecR
 	""" 
 
 	return VecR3(m.x + r * sin(theta) * cos(phi), 
-				 			 m.y + r * sin(theta) * sin(phi), 
-				 			 m.z + r * cos(theta))
+		     m.y + r * sin(theta) * sin(phi), 
+		     m.z + r * cos(theta))
 end
 
 
