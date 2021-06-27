@@ -252,7 +252,7 @@ function snapshot_sphere(b::Int, h::Int, data::AbstractArray, m::VecR3, r::Real,
 
 	if y_axis_select == false
 		for i in 1 : frame_height
-			for j in 1 : frame_width
+			for j in reverse(1 : frame_width)
 				push!(image_list, image[i][j])
 			end
 		end
