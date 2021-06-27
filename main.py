@@ -42,14 +42,14 @@ def take_snapshot(m, r, density, filename, y_axis_select = 0):
 
 
 
-def shade_sphere():
+def shade_sphere(filename = "Images/plainblack.png"):
     """
         Eingabe:
 
         Ausgabe: 
     """
 
-    background = np.array(Image.open("Images/plainblack.png"))
+    background = np.array(Image.open(filename))
     snapshot_rgba = np.array(Image.open("output.png"))
 
     gradient = vertical_gradient(snapshot_rgba, (255, 255, 255), (0, 0, 0))
