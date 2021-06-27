@@ -8,7 +8,7 @@ Um die Funktionen in der Datei `main.py` nutzen zu können, kann dieser Ordner h
 
 ### Beispielaufrufe:
 
-Snapshots der Texturen `Images/grid.png` und `Images/sun.png` mit Shading und einfacher Hintergrund: 
+Snapshots der Texturen `Images/grid.png` und `Images/sun.png` mit Shading und einfachem Hintergrund: 
 
 ```python
   take_snapshot((0, 500, 0), 200, 50, "Images/grid.png", 1)
