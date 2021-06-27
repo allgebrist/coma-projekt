@@ -99,7 +99,10 @@ function is_visible(p::VecR3, m::VecR3, r::Real, frame = ImageFrame(-250, 250, -
 
 
 		if equation_solvable(a, b, c)
-
+			
+			## numerisch idealisiert, da es sein kann, dass
+			## die Diskriminante minimal kleiner als 0 ist
+			## obwohl Punkt auf Sphäre
 			discriminant = b^2 - (4 * a * c)
 
 			if discriminant == 0
