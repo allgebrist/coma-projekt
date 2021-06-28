@@ -231,7 +231,7 @@ function snapshot_sphere(b::Int, h::Int, data::AbstractArray, m::VecR3, r::Real,
 	# andernfalls ist first_coordinate = x und second_coordinate = z
 	for first_coordinate in 1 : h
 		for second_coordinate in 1 : b
-			# Anmerkung: x Höhe des Bildes, y Breite des Bildes
+			# Anmerkung: first_coordinate Höhe des Bildes, second_coordinate Breite des Bildes
 			
 			# Berechnung des zugehörigen Pixels in data
 			i = (first_coordinate - 1) * h + second_coordinate
