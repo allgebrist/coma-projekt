@@ -117,43 +117,30 @@ function is_visible(p::VecR3, m::VecR3, r::Real, frame = ImageFrame(-250, 250, -
 
 			## Wenn s1 != s2, dann schneidet die Gerade g 
 			## die 2-Sphäre S in zwei Punkten
+
+			## s1 soll das Skalar zum betrachteten Punkt sein
+			## immer 1, da Richtungsvektor
+			if s1 != s2 && abs(s2 - 1) < abs(s1 - 1)
+				s1, s2 = s2, s1
+			end
+
+			# Wir bestimmen den Skalierungsfaktor t, so dass für
+			# den Schnittpunkt p' = mapping(p, frame, y_axis_select)
+			# gilt p' = t⋅p.
 			if y_axis_select == false
-				
-				## s1 soll das Skalar zum betrachteten Punkt sein
-				## immer 1, da Richtungsvektor
-				if s1 != s2 && abs(s2 - 1) < abs(s1 - 1)
-					s1, s2 = s2, s1
-				end
-					
-
 				t = frame.depth / p.z
-				
-				## zweiter Schnittpunkt darf nicht zwischen Punkt
-				## und Bildfläche sein, vergleiche dazu Skalare
-				if s1 == s2 || s2 > 1 || s2 < t
-					return true
-				else
-					return false
-				end
-			end
-
-			if y_axis_select == true
-				## s1 soll das Skalar zum betrachteten Punkt sein
-				## immer 1, da Richtungsvektor
-				if s1 != s2 && abs(s2 - 1) < abs(s1 - 1)
-					s1, s2 = s2, s1
-				end				
-
+			else
 				t = frame.depth / p.y
-				
-				## zweiter Schnittpunkt darf nicht zwischen Punkt
-				## und Bildfläche sein, vergleiche dazu Skalare
-				if s1 == s2 || s2 > 1 || s2 < t
-					return true
-				else
-					return false
-				end
 			end
+
+			## Zweiter Schnittpunkt darf nicht zwischen Punkt
+			## und Bildfläche sein, vergleiche dazu Skalare
+			if s1 == s2 || s2 > 1 || s2 < t
+				return true
+			else
+				return false
+			end
+
 		end
 
 	end
