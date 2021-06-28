@@ -39,7 +39,7 @@ function mapping(p::VecR3, frame = ImageFrame(-250, 250, -250, 250, 250), y_axis
 	"""
 		Eingabe: - p: 		  Ein Vektor im euklidischen Raum R^3.
 			 - frame: 	  Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
-			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen 
+			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen.
 
 		Ausgabe: 
 	"""
@@ -87,7 +87,7 @@ function is_visible(p::VecR3, m::VecR3, r::Real, frame = ImageFrame(-250, 250, -
 			 - m: 		  Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
 			 - r:		  Der Radius der besagten 2-Sphäre.
 			 - frame: 	  Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
-			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen 
+			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen.
 
 		Ausgabe: 
 	"""
@@ -217,7 +217,7 @@ function snapshot_sphere(b::Int, h::Int, data::AbstractArray, m::VecR3, r::Real,
 			 - r: 		  Der Radius der besagten 2-Sphäre.
 			 - density: 	  Ein Parameter, der die Zahl der Samples pro Pixel variiert.
 			 - frame: 	  Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
-			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen 
+			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen.
 
 		Ausgabe: 
 

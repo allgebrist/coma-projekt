@@ -4,11 +4,11 @@ import numpy as np
 
 def vertical_gradient(image, begin, end):
     """
-    Eingabe: - image:
-             - begin:
-             - end:
+    Eingabe: - image: Ein RGBA-Bild.
+             - begin: Eine Tupel, die die Anfangsfarbe des Farbwertgradienten darstellt.
+             - end:   Eine Tupel, die die Endfarbe des Farbwertgradienten darstellt.
 
-    Ausgabe: 
+    Ausgabe: Ein Farwerbgradient mit der gleichen Größe wie 'image'.
     """
 
     # Leeres Bild mit gleicher Größe von 'image'
