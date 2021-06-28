@@ -106,9 +106,7 @@ function is_visible(p::VecR3, m::VecR3, r::Real, frame = ImageFrame(-250, 250, -
 
 
 		if equation_solvable(a, b, c)
-			## numerisch idealisiert, da es sein kann, dass
-			## die Diskriminante minimal kleiner als 0 ist
-			## obwohl der Punkt in der Sphäre liegt
+
 			discriminant = b^2 - (4 * a * c)
 
 			if discriminant == 0
@@ -233,9 +231,8 @@ function snapshot_sphere(b::Int, h::Int, data::AbstractArray, m::VecR3, r::Real,
 
 	# Ist select_axis = 'z', so ist first_coordinate = x und second_coordinate = y,
 	# andernfalls ist first_coordinate = x und second_coordinate = z
-	for first_coordinate in 1 : h
-		for second_coordinate in 1 : b
-			# Anmerkung: first_coordinate = Höhe des Bildes, second_coordinate = Breite des Bildes
+	for first_coordinate in 1 : b
+		for second_coordinate in 1 : h
 			# Berechnung des zugehörigen Pixels in data
 			i = (first_coordinate - 1) * h + second_coordinate
 			points = samples(first_coordinate, second_coordinate, b, h, m, r, density)
