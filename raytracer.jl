@@ -37,8 +37,8 @@ end
 
 function mapping(p::VecR3, frame = ImageFrame(-250, 250, -250, 250, 250), y_axis_select = false)::Any
 	"""
-		Eingabe: - p: Ein Vektor im euklidischen Raum R^3.
-			 - frame: Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
+		Eingabe: - p: 		  Ein Vektor im euklidischen Raum R^3.
+			 - frame: 	  Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
 			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen 
 
 		Ausgabe: 
@@ -83,10 +83,10 @@ end
 
 function is_visible(p::VecR3, m::VecR3, r::Real, frame = ImageFrame(-250, 250, -250, 250, 250), y_axis_select = false)::Bool
 	"""
-		Eingabe: - p: Ein Vektor im euklidischen Raum R^3.
-			 - m: 		Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
-			 - r:	Der Radius der besagten 2-Sphäre.
-			 - frame: Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
+		Eingabe: - p: 		  Ein Vektor im euklidischen Raum R^3.
+			 - m: 		  Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
+			 - r:		  Der Radius der besagten 2-Sphäre.
+			 - frame: 	  Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
 			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen 
 
 		Ausgabe: 
@@ -167,8 +167,8 @@ function parametrization_sphere(theta::Real, phi::Real, m::VecR3, r::Real)::VecR
 	"""
 		Eingabe: - theta: Ein Winkel, der im Intervall [0,π] liegen muss.
 			 - phi:   Ein Winkel, der im Intervall [0,2π] liegen muss.
-			 - m: 		Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
-			 - r:	Der Radius der besagten 2-Sphäre.
+			 - m: 	  Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
+			 - r:	  Der Radius der besagten 2-Sphäre.
 
 		Ausgabe: 	
 	""" 
@@ -182,13 +182,13 @@ end
 
 function samples(first_coordinate::Real, second_coordinate::Real, b::Int, h::Int, m::VecR3, r::Real, density::Int)::Any
 	"""
-		Eingabe: - first_coordinate: Die erste Koordinate eines Pixels (x).
+		Eingabe: - first_coordinate:  Die erste Koordinate eines Pixels (x).
 			 - second_coordinate: Die zweite Koordinate eines Pixels (y oder z)
-			 - b: Die Breite des eingelesenen PNG-Bildes.
-			 - h: Die Höhe des eingelesenen PNG-Bildes.
-			 - m: Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
-			 - r: Der Radius der besagten 2-Sphäre.
-			 - density: in Parameter sein, der die Zahl der Samples pro Pixel variiert.
+			 - b: 		      Die Breite des eingelesenen PNG-Bildes.
+			 - h: 		      Die Höhe des eingelesenen PNG-Bildes.
+			 - m: 		      Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
+			 - r: 		      Der Radius der besagten 2-Sphäre.
+			 - density: 	      Ein Parameter, der die Zahl der Samples pro Pixel variiert.
 
 		Ausgabe: 
 	"""
@@ -210,13 +210,13 @@ end
 
 function snapshot_sphere(b::Int, h::Int, data::AbstractArray, m::VecR3, r::Real, density::Int, frame = ImageFrame(-250, 250, -250, 250, 250), y_axis_select = false)::AbstractArray
 	""" 
-		Eingabe: - b: Die Breite des eingelesenen PNG-Bildes.
-		 	 - h:	Die Höhe des eingelesenen PNG-Bildes.
-			 - data: Eine Liste der Länge b x h von 4-Tupeln der RGBA-Werte der Pixel des besagten PNG-Bildes.
-			 - m: Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
-			 - r: Der Radius der besagten 2-Sphäre.
-			 - density: Ein Parameter sein, der die Zahl der Samples pro Pixel variiert.
-			 - frame: Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
+		Eingabe: - b: 		  Die Breite des eingelesenen PNG-Bildes.
+		 	 - h:		  Die Höhe des eingelesenen PNG-Bildes.
+			 - data: 	  Eine Liste der Länge b x h von 4-Tupeln der RGBA-Werte der Pixel des besagten PNG-Bildes.
+			 - m: 		  Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
+			 - r: 		  Der Radius der besagten 2-Sphäre.
+			 - density: 	  Ein Parameter, der die Zahl der Samples pro Pixel variiert.
+			 - frame: 	  Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
 			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen 
 
 		Ausgabe: 
