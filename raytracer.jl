@@ -1,7 +1,7 @@
 
 struct VecR3
 	"""
-	Dieser abstrakte Datentyp (ADT) beschreibt 
+	Dieser abstrakte Datentyp beschreibt 
 	einen Vektor im euklidischen Raum R^3.
 	"""
 	x::Real
