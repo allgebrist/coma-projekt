@@ -41,7 +41,8 @@ function mapping(p::VecR3, frame = ImageFrame(-250, 250, -250, 250, 250), y_axis
 			 - frame: 	  Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
 			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen.
 
-		Ausgabe: 
+		Ausgabe: Die abgerundeten Koordinaten des Schnittpunkts von 'p' und der Bildebene 'frame', falls 'p' im Bild der
+			 Kamera liegt. Andernfalls wird 'nothing' zurückgegeben.  
 	"""
 	@assert frame.depth > 0
 	@assert frame.left < frame.right
@@ -89,7 +90,9 @@ function is_visible(p::VecR3, m::VecR3, r::Real, frame = ImageFrame(-250, 250, -
 			 - frame: 	  Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
 			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen.
 
-		Ausgabe: 
+		Ausgabe: Ein Boolescher Wert: 'true', falls 'p' im Bild der Kamera liegt und das Liniensegment zwischen 'p' und dem Schnittpunkt 's'
+			 von p und der Bildebene die Sphäre in keinem zweiten Punkt schneidet; 'false', falls 'p' nicht im Bild der Kamera liegt oder falls 
+			 'p' im Bild der Kamera liegt und das Liniensegment [s, p] die Sphäre in einem zweiten Punkt schneidet.
 	"""
 
 	if mapping(p, frame, y_axis_select) != nothing
@@ -99,10 +102,9 @@ function is_visible(p::VecR3, m::VecR3, r::Real, frame = ImageFrame(-250, 250, -
 
 
 		if equation_solvable(a, b, c)
-			
 			## numerisch idealisiert, da es sein kann, dass
 			## die Diskriminante minimal kleiner als 0 ist
-			## obwohl Punkt auf Sphäre
+			## obwohl der Punkt in der Sphäre liegt
 			discriminant = b^2 - (4 * a * c)
 
 			if discriminant == 0
@@ -170,7 +172,8 @@ function parametrization_sphere(theta::Real, phi::Real, m::VecR3, r::Real)::VecR
 			 - m: 	  Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
 			 - r:	  Der Radius der besagten 2-Sphäre.
 
-		Ausgabe: 	
+		Ausgabe: Der Wert der in 'Projekt.pdf' beschriebenen Parametrisierungsfunktion 'f' für
+			 die Sphäre S, die durch m und r definiert ist, und die Winkel 'theta' und 'phi'.		
 	""" 
 
 	return VecR3(m.x + r * sin(theta) * cos(phi), 
@@ -190,7 +193,7 @@ function samples(first_coordinate::Real, second_coordinate::Real, b::Int, h::Int
 			 - r: 		      Der Radius der besagten 2-Sphäre.
 			 - density: 	      Ein Parameter, der die Zahl der Samples pro Pixel variiert.
 
-		Ausgabe: 
+		Ausgabe: Eine Liste von VecR3-Objekten von Punkten auf der Sphäre S, die durch m und r definiert ist.
 	"""
 	sample_list = []
 
@@ -219,7 +222,8 @@ function snapshot_sphere(b::Int, h::Int, data::AbstractArray, m::VecR3, r::Real,
 			 - frame: 	  Ein ImageFrame, aus dem man die Position der Bildebene im R^3 gewinnen kann.
 			 - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen.
 
-		Ausgabe: 
+		Ausgabe: Eine Liste der Länge frame_height x frame_width von 4-Tupeln der RGBA-Werte der Pixel im Snapshots der zu 'data' 
+			 zugehörigen Kugel, wobei frame_height = frame.top - frame.bottom und frame_width = frame.right - frame.left.
 
 	"""
 
