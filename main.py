@@ -14,10 +14,10 @@ from overlay_image import overlay_image_alpha
 
 def take_snapshot(m, r, density, filename, y_axis_select = 0):
     """
-        Eingabe: - m:  Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
-                 - r:  Der Radius der besagten 2-Sphäre.
-                 - density: Ein Parameter, der die Zahl der Samples pro Pixel variiert.
-                 - filename: Der Pfad der Eingangsbilddatei.
+        Eingabe: - m:             Ein Vektor im euklidischen Raum R^3, welcher der Mittelpunkt einer 2-Sphäre darstellt.
+                 - r:             Der Radius der besagten 2-Sphäre.
+                 - density:       Ein Parameter, der die Zahl der Samples pro Pixel variiert.
+                 - filename:      Der Pfad der Eingangsbilddatei.
                  - y_axis_select: Ein Boolescher Wert, der besagt, ob wir die Kugel bzgl. der z- oder y-Achse betrachten wollen.
 
         Ausgabe: Das Snapshot der zu 'filename' zugehörigen Kugel wird gezeigt und in eine Bilddatei 'output.png' gespeichert.
