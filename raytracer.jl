@@ -231,13 +231,12 @@ function snapshot_sphere(b::Int, h::Int, data::AbstractArray, m::VecR3, r::Real,
 	# andernfalls ist first_coordinate = x und second_coordinate = z
 	for first_coordinate in 1 : h
 		for second_coordinate in 1 : b
-			# Anmerkung: first_coordinate Höhe des Bildes, second_coordinate Breite des Bildes
-			
+			# Anmerkung: first_coordinate = Höhe des Bildes, second_coordinate = Breite des Bildes
 			# Berechnung des zugehörigen Pixels in data
 			i = (first_coordinate - 1) * h + second_coordinate
 			points = samples(first_coordinate, second_coordinate, b, h, m, r, density)
-					
-			# für alle Samples soll nun das Abbild berechnet werden und an der
+		
+			# Für alle Samples soll nun das Abbild berechnet werden und an der
 			# zugehörigen Stelle der Bildebene 'image' eingefügt werden
 			for k in 1 : size(points, 1)
 				if is_visible(points[k], m, r, frame, y_axis_select)

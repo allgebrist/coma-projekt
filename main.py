@@ -54,15 +54,16 @@ def shade_sphere(filename = "Images/plainblack.png"):
                  der Kugel nach dem (durch einen linearen Farbwertgradienten erzeugten) Shading im Vordergrund steht.
     """
 
-    # 
+    # Einlesen von Hintergrund und Vordergrund (Snapshot in 'output.png')
     background = np.array(Image.open(filename))
     snapshot_rgba = np.array(Image.open("output.png"))
 
-    # 
-    gradient = vertical_gradient(snapshot_rgba, (255, 255, 255), (0, 0, 0))
+    # Wir erstellen einen schwarz/weiß Farbwertgradienten und schattieren das Snapshot damit
+    gradient = vertical_gradient(background, (255, 255, 255), (0, 0, 0))
     shaded_sphere = cv2.addWeighted(snapshot_rgba, 1.0, gradient, 0.55, 0.0)
 
-    # 
+    # Wir kombinieren Hintergrund und Vordergrund (shattiertes Snapshot) mithilfe der 'overlay_image_alpha' Funktion 
+    # und speichern das Ergebnis in ein Bild 'image_blend', welches dann unter 'shaded_output.jpg' exportiert wird 
     alpha_mask = shaded_sphere[:, :, 3] / 255.0
     snapshot = shaded_sphere[:, :, :3]
     image_blend = background[:, :, :3].copy()

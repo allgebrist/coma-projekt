@@ -8,7 +8,7 @@ def vertical_gradient(image, begin, end):
                  - begin: Eine Tupel, die die Anfangsfarbe des Farbwertgradienten darstellt.
                  - end:   Eine Tupel, die die Endfarbe des Farbwertgradienten darstellt.
 
-        Ausgabe: Ein Farwerbgradient mit der gleichen Größe wie 'image'.
+        Ausgabe: Ein Farbwertgradient mit der gleichen Größe wie 'image'.
     """
 
     # Leeres Bild mit gleicher Größe von 'image'
