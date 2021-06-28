@@ -138,7 +138,6 @@ function is_visible(p::VecR3, m::VecR3, r::Real, frame = ImageFrame(-250, 250, -
 			end
 
 			if y_axis_select == true
-
 				## s1 soll das Skalar zum betrachteten Punkt sein
 				## immer 1, da Richtungsvektor
 				if s1 != s2 && abs(s2 - 1) < abs(s1 - 1)
