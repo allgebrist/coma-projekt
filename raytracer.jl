@@ -4,9 +4,9 @@ struct VecR3
 	Dieser abstrakte Datentyp beschreibt 
 	einen Vektor im euklidischen Raum R^3.
 	"""
-	x::Real
-	y::Real
-	z::Real
+	x::Float64
+	y::Float64
+	z::Float64
 end
 
 
